@@ -94,10 +94,21 @@ void checkTimeCapsules()
 int main()
 {
     int choice;
-    cout << "welcome to Time capsule program " << endl;
-    cout << "1: create a capsule (push message)" << endl;
-    cout << "2: check for message " << endl;
-    cout << " Enter your Choice (1 or 2): " << endl;
+    cout<<""<<endl;
+    cout << "*----*----*----* WELCOME TO TIME CAPSULE PROGRAM *----*----*----* " << endl;
+
+    do{
+    cout << "*-----------------------------------*"<<endl;
+    cout << "|               MENU                |"<<endl;
+    cout << "|-----------------------------------|"<<endl;
+    cout << "|1: create a capsule (push message) |" << endl;
+    cout << "|-----------------------------------|"<<endl;
+    cout << "|2: check for message               |" << endl;
+    cout << "|-----------------------------------|"<<endl;
+    cout << "|3: Exit                            |"<< endl;
+    cout << "|___________________________________|"<<endl;
+
+    cout << " Enter your Choice: " << endl;
     cin >> choice;
     cin.ignore();
 
@@ -123,9 +134,12 @@ int main()
     {
         checkTimeCapsules();
     }
-    else{
-        cout<<"Invalid Choice.\n";
+    else if (choice != 3){
+         cout<<"Invalid Choice.\n";
     }
+
+    }while (choice != 3);
+    cout<< " Exiting program. Goodbye!!"<<endl;
 
     return 0;
 }
