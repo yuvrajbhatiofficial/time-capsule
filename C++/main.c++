@@ -122,18 +122,88 @@ int main()
     if (choice == 1)
     {
         TimeCapsule capsule;
-        cout << "Enter your message: ";
+        cout << "|---------------------|"<<endl;
+        cout << "| Enter your message: |"<<endl;
+        cout << "|---------------------|"<<endl;
         getline(cin, capsule.message);
-        cout << "Enter the delivery year: ";
-        cin >> capsule.year;
-        cout << "Enter the delivery month (1-12): ";
-        cin >> capsule.month;
-        cout << "Enter the delivery day(1-31): ";
-        cin >> capsule.day;
-        cout << "Enter the delivery hour: ";
-        cin >> capsule.hour;
-        cout << "Enter the delivery min: ";
-        cin >> capsule.min;
+        
+        //year:->
+        while(true){
+            cout << "|--------------------------|"<<endl;
+            cout << "| Enter the delivery year: | "<<endl;
+            cout << "|--------------------------|"<<endl;
+              cin >> capsule.year;
+            if(capsule.year >= 0 && capsule.year <= 9999){
+                break;
+            }
+            else{
+                cout<<"Invalid Input Try Again !"<<endl;
+            }
+        }
+        
+        //month:->
+        while(true){
+            cout << "|----------------------------------|"<<endl;
+            cout << "| Enter the delivery month (1-12): |"<<endl;
+            cout << "|----------------------------------|"<<endl;
+            cin >> capsule.month;
+            if(capsule.month >= 1 && capsule.month <= 12){
+                break;
+            }
+            else{
+                cout<<"Invalid Input Try Again !"<<endl;
+            }
+        }
+
+        //day:->
+
+         while(true){
+            cout << "|-------------------------------|"<<endl;
+            cout << "| Enter the delivery day(1-31): |"<<endl;
+            cout << "|-------------------------------|"<<endl;
+             cin >> capsule.day;
+            if(capsule.day >= 1 && capsule.day <= 31){
+                break;
+            }
+            else{
+                cout<<"Invalid Input Try Again !"<<endl;
+            }
+        }
+
+        //Hour:->
+
+         while(true){
+            cout << "|--------------------------|"<<endl;
+            cout << "| Enter the delivery hour: |"<<endl;
+            cout << "|--------------------------|"<<endl;
+             cin >> capsule.hour;
+            if(capsule.hour >= 0 && capsule.hour <= 23){
+                break;
+            }
+            else{
+                cout<<"Invalid Input Try Again !"<<endl;
+            }
+        }
+        
+        //minute:->
+
+         while(true){
+            cout << "|-------------------------|"<<endl;
+            cout << "| Enter the delivery min: |"<<endl;
+            cout << "|-------------------------|"<<endl;
+            cin >> capsule.min;
+            if(capsule.min >= 0 && capsule.min <= 59){
+                break;
+            }
+            else{
+                cout<<"Invalid Input Try Again !"<<endl;
+            }
+        }
+    
+    
+       
+        
+        
 
         saveTimeCapsule(capsule);
     }
