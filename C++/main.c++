@@ -39,7 +39,9 @@ void saveTimeCapsule(const TimeCapsule &capsule)
     file << capsule.year << " " << capsule.month << " " << capsule.day << " "; // store date of message
     file << capsule.hour << " " << capsule.min << " " << capsule.message << "\n";
     file.close();
-    cout << "Time capsule Created!\n";
+    cout << "***********************"<<endl;
+    cout << "* Time capsule Created! *"<<endl;
+    cout << "***********************"<<endl;
 }
 
 //------------------------------------------------------------------------------------------------------------
@@ -71,19 +73,24 @@ void checkTimeCapsules()
             (capsule.year == (now.tm_year + 1900) && capsule.month == (now.tm_mon + 1) && capsule.day == now.tm_mday && capsule.hour < now.tm_hour) ||
             (capsule.year == (now.tm_year + 1900) && capsule.month == (now.tm_mon + 1) && capsule.day == now.tm_mday && capsule.hour == now.tm_hour && capsule.min <= now.tm_min))
         {
-            cout << "time Capsule Delivered:" << capsule.message << "\n";
+            cout << "time Capsule Delivered: ------>" << capsule.message << "\n";
             delivered = true;
         }
         else
         {
             // if the time of capsule is not reached yet
-            cout << "Time Capsule scheduled for Later.\n";
+            cout << "-----------------------------------"<<endl;
+            cout << "|Time Capsule scheduled for Later.|"<<endl;
+            cout << "-----------------------------------"<<endl;
+            
         }
     }
     if (!delivered)
     {
         //if no message to deliverd , notify the user 
-        cout<<"No capsule to deliver at this time.\n";
+        cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
+        cout<<"|No capsule to deliver at this time.|"<<endl;
+        cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
     }
     file.close();
 }
@@ -135,11 +142,15 @@ int main()
         checkTimeCapsules();
     }
     else if (choice != 3){
-         cout<<"Invalid Choice.\n";
+         cout << "***********************"<<endl;
+         cout << "*  Invalid Choice.  ⚠️  *"<<endl;
+         cout << "***********************"<<endl;
     }
 
     }while (choice != 3);
-    cout<< " Exiting program. Goodbye!!"<<endl;
+    cout << "******************************"<<endl;
+    cout << "* Exiting program. Goodbye!! *"<<endl;
+    cout << "******************************"<<endl;
 
     return 0;
 }
